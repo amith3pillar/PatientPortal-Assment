@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Patient Portal">
+	<!-- <test name="Patient Portal Login" allow-return-values="true"> <classes> 
+		<class name="patientPortal.Test.PatientPortalLoginTest" /> </classes> </test> -->
+
+	<!-- <test name="Grant New Account Access" allow-return-values="true"> <groups> 
+		<run> <include name="NewAccount" /> </run> </groups> <classes> <class name="patientPortal.Test.PatientPortalMyAccountTest" 
+		/> </classes> </test> -->
+ <groups>
+			<run>
+				<include name="email" />
+			</run>
+		</groups>
+	 <test name="Patient Portal Update InformationPage" > 
+		<classes>
+			<class name="patientPortal.Test.PatientPortalUpdateInformationTest" />		
+		</classes>
+	</test>
+</suite> 

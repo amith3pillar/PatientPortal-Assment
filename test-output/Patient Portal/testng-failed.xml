@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Patient Portal]">
+  <test thread-count="5" name="Patient Portal Update InformationPage(failed)">
+    <groups>
+      <run>
+        <include name="email"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="patientPortal.Test.PatientPortalUpdateInformationTest">
+        <methods>
+          <include name="addPersonalEmailId"/>
+          <include name="addWorkEmailId" invocation-numbers="0"/>
+          <include name="deletePersonalEmailId"/>
+        </methods>
+      </class> <!-- patientPortal.Test.PatientPortalUpdateInformationTest -->
+    </classes>
+  </test> <!-- Patient Portal Update InformationPage(failed) -->
+</suite> <!-- Failed suite [Patient Portal] -->

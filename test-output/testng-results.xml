@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="83456" started-at="2018-11-29T09:59:45Z" finished-at="2018-11-29T10:01:08Z">
+    <groups>
+      <group name="email">
+        <method signature="PatientPortalUpdateInformationTest.addPersonalEmailId()[pri:2, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="addPersonalEmailId" class="patientPortal.Test.PatientPortalUpdateInformationTest"/>
+        <method signature="PatientPortalUpdateInformationTest.deletePersonalEmailId()[pri:3, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="deletePersonalEmailId" class="patientPortal.Test.PatientPortalUpdateInformationTest"/>
+        <method signature="PatientPortalUpdateInformationTest.addWorkEmailId(java.util.Hashtable)[pri:1, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="addWorkEmailId" class="patientPortal.Test.PatientPortalUpdateInformationTest"/>
+      </group> <!-- email -->
+    </groups>
+    <test name="Default test" duration-ms="83456" started-at="2018-11-29T09:59:45Z" finished-at="2018-11-29T10:01:08Z">
+      <class name="patientPortal.Test.PatientPortalUpdateInformationTest">
+        <test-method status="PASS" signature="addWorkEmailId(java.util.Hashtable)[pri:1, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="addWorkEmailId" duration-ms="36438" started-at="2018-11-29T09:59:45Z" data-provider="getData" finished-at="2018-11-29T10:00:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{PersonalEmail=haldarjan15@gmail.com, WorkEmail=amith@modmed.com, Runmode=Y, Browser=Mozilla}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addWorkEmailId -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="quit" is-config="true" duration-ms="213" started-at="2018-11-29T10:00:21Z" finished-at="2018-11-29T10:00:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="addPersonalEmailId()[pri:2, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="addPersonalEmailId" duration-ms="23574" started-at="2018-11-29T10:00:22Z" finished-at="2018-11-29T10:00:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addPersonalEmailId -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="quit" is-config="true" duration-ms="34" started-at="2018-11-29T10:00:45Z" finished-at="2018-11-29T10:00:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="deletePersonalEmailId()[pri:3, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="deletePersonalEmailId" duration-ms="23137" started-at="2018-11-29T10:00:45Z" depends-on-methods="patientPortal.Test.PatientPortalUpdateInformationTest.addPersonalEmailId" finished-at="2018-11-29T10:01:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deletePersonalEmailId -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="quit" is-config="true" duration-ms="25" started-at="2018-11-29T10:01:08Z" finished-at="2018-11-29T10:01:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- patientPortal.Test.PatientPortalUpdateInformationTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -50,6 +50,7 @@ public class BasePage {
 
 	public void Wait(WebElement element) {
 		try {
+			//driver.navigate().refresh();
 			long timeoutInSeconds = 50000;
 			new WebDriverWait(driver, timeoutInSeconds).until(ExpectedConditions.elementToBeClickable(element));
 

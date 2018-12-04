@@ -55,7 +55,7 @@ public class PatientPortalMyAccountPage extends BasePage {
 	
 	// This method is for creating new user by Clicking on MyAccount from left
 	// pannel
-	public void grantAccessToNewUser(String authUserName, String authPassword, String AuthConfirmPass,
+	/*public void grantAccessToNewUser(String authUserName, String authPassword, String AuthConfirmPass,
 		String FirstName, String LastName) throws InterruptedException {
 		test.log(LogStatus.INFO, "Entering values in authontication page");
 		//Thread.sleep(3000);
@@ -73,11 +73,57 @@ public class PatientPortalMyAccountPage extends BasePage {
 		test.log(LogStatus.INFO, "New Crediential Created ");
 		Thread.sleep(3000);
 
+	}*/
+	public void authorizedUserName(String authUserName){
+		test.log(LogStatus.INFO, "Entering Authorized Representative User Name");
+		Wait(enterUserName);
+		enterUserName.clear();
+		test.log(LogStatus.INFO, "Loggin In-"+authUserName);
+		enterUserName.sendKeys(authUserName);
 	}
 	
+	public void authorizedPassword(String authPassword){
+		test.log(LogStatus.INFO, "Entering Password for  Authorized Representative ");
+		Wait(enterPassword);
+		enterPassword.clear();
+		enterPassword.sendKeys(authPassword);
+	}
+	
+	
+	public void authorizedConfirmPassword(String AuthConfirmPass){
+		test.log(LogStatus.INFO, "Entering Confirm Password for  Authorized Representative ");
+		Wait(enterCon_Password);
+		enterCon_Password.clear();
+		enterCon_Password.sendKeys(AuthConfirmPass);
+	}
+	
+	public void authorizedFirstName(String FirstName){
+		test.log(LogStatus.INFO, "Entering First Name of  Authorized Representative ");
+		Wait(firstName);
+		firstName.clear();
+		firstName.sendKeys(FirstName);
+	}
+	
+	
+	public void authorizedLastName(String LastName){
+		test.log(LogStatus.INFO, "Entering Last Name of  Authorized Representative ");
+		Wait(last_Name);
+		last_Name.clear();
+		last_Name.sendKeys(LastName);
+	}
+	
+	
+	public void clickOnSaveBtn(){
+		test.log(LogStatus.INFO, "Clicking on Save  Button on  Authorized Representative ");
+		Wait(Btn_Save);
+		Btn_Save.click();
+	}
+	
+	
+	
 	//This function is used for clicking on Notice button 
-	public PatientPortalHomePage clickOnNotice(){
-		Wait(Btn_Notice);
+	public PatientPortalHomePage clickOnNotice() throws InterruptedException{
+		Thread.sleep(3000);
 		Btn_Notice.click();
 		PatientPortalHomePage ppHomePage = new PatientPortalHomePage(driver, test);
 		PageFactory.initElements(driver, ppHomePage);
@@ -91,8 +137,12 @@ public class PatientPortalMyAccountPage extends BasePage {
 		myAccountbtn.click();
 		Thread.sleep(3000);
 		clkHistoryLog.click();
-		
-		
+			
+	}
+	
+	
+	public void clkOnMyAccountSection(){
+		test.log(LogStatus.INFO, "Clicking on My Account Section");
 	}
 
 	

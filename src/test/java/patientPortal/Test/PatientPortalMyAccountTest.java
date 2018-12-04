@@ -27,7 +27,8 @@ public class PatientPortalMyAccountTest extends BaseTest{
 	 
 	//This test will create a user from My Account Section 
 	@Test(dataProvider = "getData",priority =1)
-	public void MyAccount(Hashtable<String,String> data) throws InterruptedException{
+	public void CreatingMyAccount(Hashtable<String,String> data) throws InterruptedException{
+	
 		test = extent.startTest("My Account");
 		
 		if (! patientPortal.Util.DataUtil.isTestExecutable(xls, testCaseName) ||  data.get(PPConstant.RUNMODE_COL).equals("N")) {
@@ -41,20 +42,27 @@ public class PatientPortalMyAccountTest extends BaseTest{
 		pplaunchPage = new PatientPortalLaunchPage(driver, test);
 		PageFactory.initElements(driver, pplaunchPage);
 		pploginpage = pplaunchPage.goToLoginPage();
+		pploginpage.enterUserName(data.get("UserName"));
+		pploginpage.enterPassword(data.get("Password"));
+		Object page =pploginpage.clickOnSignIn();
 		
 		
-		
-		Object page = pploginpage.doLogin(data.get("UserName"), data.get("Password"));
 		Assert.assertTrue(pploginpage.verifyTitle("Home"));
 		
 		ppHomePage = (PatientPortalHomePage) page;
-		ppMyAccountPage =	ppHomePage.openMyAccount();
+		ppHomePage.openMyAccountSection();
+		ppMyAccountPage =ppHomePage.openAuthorizationPage();
 		test.log(LogStatus.INFO, "Clicking on Grant Access Under My Account");
 		Assert.assertTrue(ppMyAccountPage.verifyTitle("Grant Access"));
 		takeScreenShot();
 		
 		test.log(LogStatus.INFO,"Creating New user Credientials");
-		ppMyAccountPage.grantAccessToNewUser(data.get("AutoUserName"),data.get("AutoPassword"), data.get("AutoConfimPassword"), data.get("FirstName"), data.get("LastName"));
+		ppMyAccountPage.authorizedUserName(data.get("AutoUserName"));
+		ppMyAccountPage.authorizedPassword(data.get("AutoPassword"));
+		ppMyAccountPage.authorizedConfirmPassword(data.get("AutoConfimPassword"));
+		ppMyAccountPage.authorizedFirstName(data.get("FirstName"));
+		ppMyAccountPage.authorizedLastName(data.get("LastName"));
+		ppMyAccountPage.clickOnSaveBtn();
 		ppHomePage = ppMyAccountPage.clickOnNotice();
 		Assert.assertTrue(ppMyAccountPage.verifyTitle("Home"));
 		ppMyAccountPage.clickOnHistoryLog();

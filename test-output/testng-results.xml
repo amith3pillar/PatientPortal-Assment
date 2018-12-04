@@ -1,49 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="1" failed="1" ignored="0" total="4" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="83456" started-at="2018-11-29T09:59:45Z" finished-at="2018-11-29T10:01:08Z">
+  <suite name="Patient Portal" duration-ms="98355" started-at="2018-12-03T16:15:22Z" finished-at="2018-12-03T16:17:00Z">
     <groups>
-      <group name="email">
-        <method signature="PatientPortalUpdateInformationTest.addPersonalEmailId()[pri:2, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="addPersonalEmailId" class="patientPortal.Test.PatientPortalUpdateInformationTest"/>
-        <method signature="PatientPortalUpdateInformationTest.deletePersonalEmailId()[pri:3, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="deletePersonalEmailId" class="patientPortal.Test.PatientPortalUpdateInformationTest"/>
-        <method signature="PatientPortalUpdateInformationTest.addWorkEmailId(java.util.Hashtable)[pri:1, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="addWorkEmailId" class="patientPortal.Test.PatientPortalUpdateInformationTest"/>
-      </group> <!-- email -->
     </groups>
-    <test name="Default test" duration-ms="83456" started-at="2018-11-29T09:59:45Z" finished-at="2018-11-29T10:01:08Z">
-      <class name="patientPortal.Test.PatientPortalUpdateInformationTest">
-        <test-method status="PASS" signature="addWorkEmailId(java.util.Hashtable)[pri:1, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="addWorkEmailId" duration-ms="36438" started-at="2018-11-29T09:59:45Z" data-provider="getData" finished-at="2018-11-29T10:00:21Z">
+    <test name="Patient Portal Login Test" duration-ms="26559" started-at="2018-12-03T16:15:22Z" finished-at="2018-12-03T16:15:49Z">
+      <class name="patientPortal.Test.PatientPortalLoginTest">
+        <test-method status="PASS" signature="doLogin(java.util.Hashtable)[pri:0, instance:patientPortal.Test.PatientPortalLoginTest@9d5509a]" name="doLogin" duration-ms="26158" started-at="2018-12-03T16:15:22Z" data-provider="getData" finished-at="2018-12-03T16:15:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{PersonalEmail=haldarjan15@gmail.com, WorkEmail=amith@modmed.com, Runmode=Y, Browser=Mozilla}]]>
+                <![CDATA[{ExpectedResult=Success, Password=a@123, Runmode=Y, UserName=auto15, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addWorkEmailId -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="quit" is-config="true" duration-ms="213" started-at="2018-11-29T10:00:21Z" finished-at="2018-11-29T10:00:22Z">
+        </test-method> <!-- doLogin -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalLoginTest@9d5509a]" name="quit" is-config="true" duration-ms="317" started-at="2018-12-03T16:15:48Z" finished-at="2018-12-03T16:15:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="addPersonalEmailId()[pri:2, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="addPersonalEmailId" duration-ms="23574" started-at="2018-11-29T10:00:22Z" finished-at="2018-11-29T10:00:45Z">
+        <test-method status="SKIP" signature="doLogin(java.util.Hashtable)[pri:0, instance:patientPortal.Test.PatientPortalLoginTest@9d5509a]" name="doLogin" duration-ms="1" started-at="2018-12-03T16:15:49Z" data-provider="getData" finished-at="2018-12-03T16:15:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{ExpectedResult=Unsucessful, Password=A6, Runmode=N, UserName=auto15, Browser=Mozilla}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[skipping the test as the runmode of this test case is NO]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: skipping the test as the runmode of this test case is NO
+at patientPortal.Test.PatientPortalLoginTest.doLogin(PatientPortalLoginTest.java:72)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addPersonalEmailId -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="quit" is-config="true" duration-ms="34" started-at="2018-11-29T10:00:45Z" finished-at="2018-11-29T10:00:45Z">
+        </test-method> <!-- doLogin -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalLoginTest@9d5509a]" name="quit" is-config="true" duration-ms="44" started-at="2018-12-03T16:15:49Z" finished-at="2018-12-03T16:15:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method status="PASS" signature="deletePersonalEmailId()[pri:3, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="deletePersonalEmailId" duration-ms="23137" started-at="2018-11-29T10:00:45Z" depends-on-methods="patientPortal.Test.PatientPortalUpdateInformationTest.addPersonalEmailId" finished-at="2018-11-29T10:01:08Z">
+      </class> <!-- patientPortal.Test.PatientPortalLoginTest -->
+    </test> <!-- Patient Portal Login Test -->
+    <test name="Patient Portal HomePage" duration-ms="31378" started-at="2018-12-03T16:15:49Z" finished-at="2018-12-03T16:16:20Z">
+      <class name="patientPortal.Test.PatientPortalHomePageTest">
+        <test-method status="FAIL" signature="sendAMessage(java.util.Hashtable)[pri:1, instance:patientPortal.Test.PatientPortalHomePageTest@544fa968]" name="sendAMessage" duration-ms="31277" started-at="2018-12-03T16:15:49Z" data-provider="getData" finished-at="2018-12-03T16:16:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Subject=Entering a Subject, Message=Entering a message, Runmode=Y, Browser=Chrome}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at org.testng.Assert.assertTrue(Assert.java:54)
+at patientPortal.Test.PatientPortalHomePageTest.sendAMessage(PatientPortalHomePageTest.java:60)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deletePersonalEmailId -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalUpdateInformationTest@9d5509a]" name="quit" is-config="true" duration-ms="25" started-at="2018-11-29T10:01:08Z" finished-at="2018-11-29T10:01:08Z">
+        </test-method> <!-- sendAMessage -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalHomePageTest@544fa968]" name="quit" is-config="true" duration-ms="92" started-at="2018-12-03T16:16:20Z" finished-at="2018-12-03T16:16:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-      </class> <!-- patientPortal.Test.PatientPortalUpdateInformationTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- patientPortal.Test.PatientPortalHomePageTest -->
+    </test> <!-- Patient Portal HomePage -->
+    <test name="Patient Portal My Account" duration-ms="40382" started-at="2018-12-03T16:16:20Z" finished-at="2018-12-03T16:17:00Z">
+      <class name="patientPortal.Test.PatientPortalMyAccountTest">
+        <test-method status="PASS" signature="CreatingMyAccount(java.util.Hashtable)[pri:1, instance:patientPortal.Test.PatientPortalMyAccountTest@7c9d8e2]" name="CreatingMyAccount" duration-ms="40319" started-at="2018-12-03T16:16:20Z" data-provider="getData" finished-at="2018-12-03T16:17:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{AutoUserName=Auto17, AutoPassword=a@123, Runmode=Y, AutoConfimPassword=a@123, UserName=auto15, Password=a@123, LastName=Pass, ExpectedResult=Success, FirstName=Sunil, Browser=Chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreatingMyAccount -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:patientPortal.Test.PatientPortalMyAccountTest@7c9d8e2]" name="quit" is-config="true" duration-ms="57" started-at="2018-12-03T16:17:00Z" finished-at="2018-12-03T16:17:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- patientPortal.Test.PatientPortalMyAccountTest -->
+    </test> <!-- Patient Portal My Account -->
+  </suite> <!-- Patient Portal -->
 </testng-results>

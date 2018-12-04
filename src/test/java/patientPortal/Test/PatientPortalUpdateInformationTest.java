@@ -38,17 +38,17 @@ public class PatientPortalUpdateInformationTest extends BaseTest {
 		pplaunchPage = new PatientPortalLaunchPage(driver, test);
 		PageFactory.initElements(driver, pplaunchPage);
 		pploginpage = pplaunchPage.goToLoginPage();
+		pploginpage.enterUserName(PPConstant.PROD_USERNAME);
+		pploginpage.enterPassword(PPConstant.PROD_PASSWORD);
 
-		Object page = pploginpage.doLogin(PPConstant.PROD_USERNAME, PPConstant.PROD_PASSWORD);
+		Object page = 	pploginpage.clickOnSignIn();
 		if (page instanceof PatientPortalLoginPage)
 			Assert.fail("Login failed ");
 		else if (page instanceof PatientPortalHomePage)
 			System.out.println("Logged in successfully");
 
 		ppHomePage = (PatientPortalHomePage) page;
-
 		ppUpdateInformation = ppHomePage.navigatetoUpdateInformation();
-
 		ppUpdateInformation.selectWorkEmail();
 		ppUpdateInformation.clickOnEditWorkEmail();
 		ppUpdateInformation.editEmailbox(data.get("WorkEmail"));
@@ -77,6 +77,15 @@ public class PatientPortalUpdateInformationTest extends BaseTest {
 		ppUpdateInformation.clickOnSendBtn();
 		//my name is 
 	}
+	
+@Test(dependsOnMethods = { "addWorkEmailId" }, groups = { "email" }, priority = 4)
+	public void doubleClickOnPatientInfromation() throws InterruptedException{
+	ppUpdateInformation = ppHomePage.navigatetoUpdateInformation();
+	ppUpdateInformation.myInformationSection();
+		
+	}
+	
+	
 
 	@DataProvider
 	public Object[][] getData() {

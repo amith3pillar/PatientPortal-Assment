@@ -13,4 +13,5 @@ public class PPUpdateInformationOR {
 	public static final String EDIT_PERSONAL_EMAIL = "//div[@data-edit-button-for='emailOption0']";
 	 //div[@id='section-emailOption0']//span[@class='ui-icon ui-icon-pencil']
 	public static final String PVT_EMAIL_DELETE_BTN = "//div[@data-delete-button-for='emailOption0']";
+	public static final String SECTION_MY_INFORMATION = "//div[@data-gmed-section='Patient-section']";
 }

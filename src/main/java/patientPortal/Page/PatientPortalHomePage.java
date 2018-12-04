@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,7 +61,7 @@ public class PatientPortalHomePage extends BasePage {
 
 	}
 
-	public void send_A_Message(String Sub_String, String MessageString) {
+	/*public void send_A_Message(String Sub_String, String MessageString) {
 		test.log(LogStatus.INFO, "Opening New Message Page");
 		Wait(send_Message_Button);
 		send_Message_Button.click();
@@ -70,9 +71,9 @@ public class PatientPortalHomePage extends BasePage {
 		test.log(LogStatus.INFO, "Entering Message as- " + MessageString);
 		enter_Message.sendKeys("MessageString");
 		send_Button.click();
-	}
+	}*/
 
-	public void requestAppointment(String Sub_String, String MessageString) {
+	/*public void requestAppointment(String Sub_String, String MessageString) {
 		test.log(LogStatus.INFO, "Opening Request an Appointment Page");
 		Wait(requestAnAppointment);
 		requestAnAppointment.click();
@@ -83,9 +84,9 @@ public class PatientPortalHomePage extends BasePage {
 		test.log(LogStatus.INFO, "Entering Message as- " + MessageString);
 		send_Button.click();
 
-	}
+	}*/
 
-	public PatientPortalMyAccountPage openMyAccount() throws InterruptedException {
+	/*public PatientPortalMyAccountPage openMyAccount() throws InterruptedException {
 		test.log(LogStatus.INFO, "Opening Grant Access Screen");
 		Thread.sleep(3000);
 		myAccountbtn.click();
@@ -96,7 +97,33 @@ public class PatientPortalHomePage extends BasePage {
 		return ppMyAccountPage;
 
 	}
+*/
+	public void openMyAccountSection() throws InterruptedException{
+		try{
+			
 
+		test.log(LogStatus.INFO, "Clickin on My Account section");
+		Thread.sleep(2000);
+		//driver.navigate().refresh();
+		Wait(myAccountbtn);
+		myAccountbtn.click();
+		}
+		catch(ElementNotVisibleException e){
+			test.log(LogStatus.ERROR, e.getLocalizedMessage());
+		}
+	}
+	
+	public PatientPortalMyAccountPage openAuthorizationPage(){
+		test.log(LogStatus.INFO, "Clickin on Grant Access  section Under My Account");
+		Wait(clkGrantAccess);
+		clkGrantAccess.click();
+		PatientPortalMyAccountPage ppMyAccountPage = new PatientPortalMyAccountPage(driver, test);
+		PageFactory.initElements(driver, ppMyAccountPage);
+		return ppMyAccountPage;
+	}
+	
+	
+	
 	// Clicking on Update page
 	public PatientPortalUpdateInformationPage navigatetoUpdateInformation() throws InterruptedException {
 		System.out.println("Clicking on Update Button on Home Page");
@@ -138,6 +165,55 @@ public class PatientPortalHomePage extends BasePage {
 		PatientPortalUpdateInformationPage ppUpdateInformation = new PatientPortalUpdateInformationPage(driver, test);
 		PageFactory.initElements(driver, ppUpdateInformation);
 		return ppUpdateInformation;
+	}
+	
+	public void clkOnSendAMessageBtn(){
+		test.log(LogStatus.INFO, "Opening New Message Page");
+		Wait(send_Message_Button);
+		send_Message_Button.click();
+	}
+
+	public void enterSubjectText(String Sub_String ){
+		Wait(enter_Subject);
+		test.log(LogStatus.INFO, "Entering Subject as- " + Sub_String);
+		enter_Subject.sendKeys("Sub_String");
+	}
+	
+	public void enterMessageText(String MessageString ){
+		Wait(enter_Message);
+		test.log(LogStatus.INFO, "Entering Message as- " + MessageString);
+		enter_Message.sendKeys("MessageString");
+	}
+	
+	public void clickOnSndBtnOnMessagePage(){
+		Wait(send_Button);
+		send_Button.click();
+	}
+	
+	public void clickOnRequestANAppointmentButton() throws InterruptedException{
+		test.log(LogStatus.INFO, "Opening Request an Appointment Page");
+		Wait(requestAnAppointment);
+		//Thread.sleep(5000);
+		requestAnAppointment.click();
+	
+	}
+	
+	public void enterSubjectAppointmentScreen(String Sub_String){
+		Wait(enter_Subject);
+		test.log(LogStatus.INFO, "Entering Subject as- " + Sub_String);
+		enter_Subject.sendKeys("Sub_String");
+	}
+	
+	public void enterMessageAppointmentScreen(String MessageString){
+		Wait(enter_Message);
+		enter_Message.sendKeys("MessageString");
+		test.log(LogStatus.INFO, "Entering Message as- " + MessageString);
+	}
+	
+	public void clickOnSendBtnOfAppointMentScreen(){
+		Wait(send_Button);
+		send_Button.click();
+
 	}
 
 }

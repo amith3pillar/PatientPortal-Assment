@@ -23,13 +23,16 @@ public class PatientPortalLoginPage extends BasePage {
 
 	@FindBy(xpath = PPLoginPageOR.CLICKONSUBMIT_BTN)
 	public WebElement ClickOnSubmit;
+	
+	@FindBy(xpath = PPLoginPageOR.WELCOME_MESSAGE)
+	public WebElement welcome;
 
 	public PatientPortalLoginPage(WebDriver driver, ExtentTest test) {
 		super(driver, test);
 
 	}
 
-	public Object doLogin(String usName, String pWord) throws InterruptedException {
+	/*public Object doLogin(String usName, String pWord) throws InterruptedException {
 		test.log(LogStatus.INFO, "Loggin In-"+usName +"/"+ pWord);
 		UserName.sendKeys(usName);
 		Password.sendKeys(pWord);
@@ -37,7 +40,7 @@ public class PatientPortalLoginPage extends BasePage {
 	//	wait1.until(ExpectedConditions.)
 		Thread.sleep(2000); // Need to Implement Explicite wait or Implicite
 							// wait
-		boolean loginsuccess = 	isElementPresent(PPHomePageOR.REQUEST_AN_APPOINTMENT);
+		boolean loginsuccess = 	isElementPresent(PPLoginPageOR.WELCOME_MESSAGE);
 		
 
 		if (loginsuccess){
@@ -54,5 +57,31 @@ public class PatientPortalLoginPage extends BasePage {
 			//return PageFactory.initElements(driver, PatientPortalLoginPage.class);
 		}
 	}
-
+	
+	*/
+	public void enterUserName(String usName ){
+		test.log(LogStatus.INFO, "Loggin In-"+usName +"/");
+		UserName.sendKeys(usName);
+	}
+	public void enterPassword(String pWord ){
+		test.log(LogStatus.INFO, "Entering Password-"+pWord +"/");
+		Password.sendKeys(pWord);
+	}
+	public Object clickOnSignIn( ){
+		ClickOnSubmit.click();
+		boolean loginsuccess = 	isElementPresent(PPLoginPageOR.WELCOME_MESSAGE);
+		if (loginsuccess){
+			test.log(LogStatus.INFO, "Loggin success-");
+			PatientPortalHomePage pphomepage= new PatientPortalHomePage(driver,test);
+			PageFactory.initElements(driver, pphomepage);
+			return pphomepage;
+		}	//return PageFactory.initElements(driver, PatientPortalHomePage.class);
+		else{
+			test.log(LogStatus.INFO, "Loggin is not success-");
+			PatientPortalLoginPage pploginpage = new PatientPortalLoginPage(driver,test);
+			PageFactory.initElements(driver, pploginpage);
+			return pploginpage;
+			//return PageFactory.initElements(driver, PatientPortalLoginPage.class);
+		}
+	}
 }

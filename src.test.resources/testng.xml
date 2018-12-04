@@ -7,7 +7,9 @@
 	<!-- <test name="Grant New Account Access" allow-return-values="true"> <groups> 
 		<run> <include name="NewAccount" /> </run> </groups> <classes> <class name="patientPortal.Test.PatientPortalMyAccountTest" 
 		/> </classes> </test> -->
- <groups>
+ 
+  
+<!--  <groups>
 			<run>
 				<include name="email" />
 			</run>
@@ -17,4 +19,24 @@
 			<class name="patientPortal.Test.PatientPortalUpdateInformationTest" />		
 		</classes>
 	</test>
+	 -->
+	
+	<test name="Patient Portal Login Test" > 
+		<classes>
+			<class name="patientPortal.Test.PatientPortalLoginTest" />		
+		</classes>
+	</test>
+	
+	<test name="Patient Portal HomePage" > 
+		<classes>
+			<class name="patientPortal.Test.PatientPortalHomePageTest" />		
+		</classes>
+	</test>
+	
+	<test name="Patient Portal My Account" > 
+		<classes>
+			<class name="patientPortal.Test.PatientPortalMyAccountTest" />		
+		</classes>
+	</test>
+	 
 </suite> 

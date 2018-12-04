@@ -41,6 +41,9 @@ public class PatientPortalUpdateInformationPage extends BasePage {
 
 	@FindBy(xpath = PPUpdateInformationOR.PVT_EMAIL_DELETE_BTN)
 	public WebElement PrivateEmailDeleteBTN;
+	
+	@FindBy(xpath = PPUpdateInformationOR.SECTION_MY_INFORMATION)
+	public WebElement myInformationSection;
 
 	// a[@id='btnSendTop']
 
@@ -93,20 +96,17 @@ public class PatientPortalUpdateInformationPage extends BasePage {
 	// Clicking on send button at the top and navigating to HomePage
 	public PatientPortalHomePage clickOnSendBtn() throws InterruptedException {
 		Thread.sleep(10000);
-		
-		/* WebDriverWait wait = new WebDriverWait(driver ,3000);
-
-         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='btnSendTop']")));
-              // click on the compose button as soon as the "compose" button is visible
-         driver.findElement(By.xpath("//a[@id='btnSendTop']")).click();
-		
-		*/
-		
 		clkSendBtn.click();
 		System.out.println("Clicking on send button at the top and navigating to HomePage");
 		PatientPortalHomePage ppHomePage = new PatientPortalHomePage(driver, test);
 		PageFactory.initElements(driver, ppHomePage);
 		return ppHomePage;
 
+	}
+	
+	
+	public void myInformationSection(){
+		Actions action = new Actions(driver);
+		 action.doubleClick(myInformationSection).build().perform();
 	}
 }

@@ -24,7 +24,7 @@ public class PatientPortalHomePageTest extends BaseTest {
 
 	/*This Test is to Send a message to the gGastro */
 	@Test(dataProvider = "getData", priority = 1)
-	public void sendMessage(Hashtable<String, String> data) throws InterruptedException {
+	public void sendAMessage(Hashtable<String, String> data) throws InterruptedException {
 		// String testCaseName = "HomePage_SendMessage";
 		test = extent.startTest("Home Page");
 		if (!patientPortal.Util.DataUtil.isTestExecutable(xls, testCaseName)
@@ -38,10 +38,11 @@ public class PatientPortalHomePageTest extends BaseTest {
 
 		pplaunchPage = new PatientPortalLaunchPage(driver, test);
 		PageFactory.initElements(driver, pplaunchPage);
-
 		pploginpage = pplaunchPage.goToLoginPage();
+		pploginpage.enterUserName(PPConstant.PROD_USERNAME);
+		pploginpage.enterPassword(PPConstant.PROD_PASSWORD);
 
-		Object page = pploginpage.doLogin(PPConstant.PROD_USERNAME, PPConstant.PROD_PASSWORD);
+		Object page = 	pploginpage.clickOnSignIn();
 		if (page instanceof PatientPortalLoginPage)
 			Assert.fail("Login failed ");
 		else if (page instanceof PatientPortalHomePage)
@@ -49,20 +50,18 @@ public class PatientPortalHomePageTest extends BaseTest {
 
 		ppHomePage = (PatientPortalHomePage) page;
 		Thread.sleep(3000);
-		ppHomePage.send_A_Message(data.get("Subject"), data.get("Message"));
-		test.log(LogStatus.PASS, "Test Passed");
-		test.log(LogStatus.INFO, "Message send successfully");
+		ppHomePage.clkOnSendAMessageBtn();
+		ppHomePage.enterSubjectText(data.get("Subject"));
+		ppHomePage.enterMessageText(data.get("Message"));
+		ppHomePage.clickOnSndBtnOnMessagePage();
 		ppHomePage.takeScreenShot();
-	
 		Assert.assertTrue(ppHomePage.verifyTitle("Home"));
-	
 		ppHomePage.leftMenu.logoutPath();
-		Assert.assertTrue(ppHomePage.verifyTitle("Log on"));
-		
-
+		//Assert.assertTrue(ppHomePage.verifyTitle("Log on"));
 	}
+	
 	/*This Test is to send appointment request to  gGastro */
-	@Test(dataProvider = "getData", priority = 2)
+/*	@Test(dataProvider = "getData", priority = 1)
 	public void requestAnAppointment(Hashtable<String, String> data) throws InterruptedException {
 
 		test = extent.startTest("Home Page");
@@ -75,27 +74,32 @@ public class PatientPortalHomePageTest extends BaseTest {
 		test.log(LogStatus.INFO, "Opening Browser" + data.get("Browser"));
 		init(data.get("Browser"));
 
-		PatientPortalLaunchPage pplaunchPage = new PatientPortalLaunchPage(driver, test);
+		pplaunchPage = new PatientPortalLaunchPage(driver, test);
 		PageFactory.initElements(driver, pplaunchPage);
+		pploginpage = pplaunchPage.goToLoginPage();
+		pploginpage.enterUserName(PPConstant.PROD_USERNAME);
+		pploginpage.enterPassword(PPConstant.PROD_PASSWORD);
 
-		PatientPortalLoginPage	pploginpage = pplaunchPage.goToLoginPage();
-
-		Object page = pploginpage.doLogin(PPConstant.PROD_USERNAME, PPConstant.PROD_PASSWORD);
+		Object page = 	pploginpage.clickOnSignIn();
 		if (page instanceof PatientPortalLoginPage)
 			Assert.fail("Login failed ");
 		else if (page instanceof PatientPortalHomePage)
 			System.out.println("Logged in successfully");
+		
 
-		PatientPortalHomePage	ppHomePage = (PatientPortalHomePage) page;
+		ppHomePage = (PatientPortalHomePage) page;
+		driver.navigate().refresh();
 		Thread.sleep(3000);
-		ppHomePage.send_A_Message(data.get("Subject"), data.get("Message"));
-		test.log(LogStatus.PASS, "Test Passed");
-		ppHomePage.takeScreenShot();
-
+		ppHomePage.clkOnSendAMessageBtn();
+		ppHomePage.clickOnRequestANAppointmentButton();
+		ppHomePage.enterSubjectAppointmentScreen(data.get("Subject"));
+		ppHomePage.enterMessageAppointmentScreen(data.get("Message"));
+		ppHomePage.clickOnSendBtnOfAppointMentScreen();
 		Assert.assertTrue(ppHomePage.verifyTitle("Home"));
 		ppHomePage.leftMenu.logoutPath();
 		Assert.assertTrue(ppHomePage.verifyTitle("Log on"));
-	}
+		
+	}*/
 
 	@DataProvider
 	public Object[][] getData() {

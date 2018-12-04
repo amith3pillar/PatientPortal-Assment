@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Patient Portal]">
-  <test thread-count="5" name="Patient Portal Update InformationPage(failed)">
-    <groups>
-      <run>
-        <include name="email"/>
-      </run>
-    </groups>
+  <test thread-count="5" name="Patient Portal Login Test(failed)">
     <classes>
-      <class name="patientPortal.Test.PatientPortalUpdateInformationTest">
+      <class name="patientPortal.Test.PatientPortalLoginTest">
         <methods>
-          <include name="addPersonalEmailId"/>
-          <include name="addWorkEmailId" invocation-numbers="0"/>
-          <include name="deletePersonalEmailId"/>
+          <include name="doLogin" invocation-numbers="1"/>
+          <include name="quit"/>
         </methods>
-      </class> <!-- patientPortal.Test.PatientPortalUpdateInformationTest -->
+      </class> <!-- patientPortal.Test.PatientPortalLoginTest -->
     </classes>
-  </test> <!-- Patient Portal Update InformationPage(failed) -->
+  </test> <!-- Patient Portal Login Test(failed) -->
+  <test thread-count="5" name="Patient Portal HomePage(failed)">
+    <classes>
+      <class name="patientPortal.Test.PatientPortalHomePageTest">
+        <methods>
+          <include name="quit"/>
+          <include name="sendAMessage" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- patientPortal.Test.PatientPortalHomePageTest -->
+    </classes>
+  </test> <!-- Patient Portal HomePage(failed) -->
 </suite> <!-- Failed suite [Patient Portal] -->

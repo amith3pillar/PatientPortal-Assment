@@ -60,46 +60,6 @@ public class PatientPortalHomePageTest extends BaseTest {
 		//Assert.assertTrue(ppHomePage.verifyTitle("Log on"));
 	}
 	
-	/*This Test is to send appointment request to  gGastro */
-/*	@Test(dataProvider = "getData", priority = 1)
-	public void requestAnAppointment(Hashtable<String, String> data) throws InterruptedException {
-
-		test = extent.startTest("Home Page");
-		if (!patientPortal.Util.DataUtil.isTestExecutable(xls, testCaseName)
-				|| data.get(PPConstant.RUNMODE_COL).equals("N")) {
-			test.log(LogStatus.SKIP, "skipping the test as the runmode of this test case is NO");
-			throw new SkipException("skipping the test as the runmode of this test case is NO");
-		}
-
-		test.log(LogStatus.INFO, "Opening Browser" + data.get("Browser"));
-		init(data.get("Browser"));
-
-		pplaunchPage = new PatientPortalLaunchPage(driver, test);
-		PageFactory.initElements(driver, pplaunchPage);
-		pploginpage = pplaunchPage.goToLoginPage();
-		pploginpage.enterUserName(PPConstant.PROD_USERNAME);
-		pploginpage.enterPassword(PPConstant.PROD_PASSWORD);
-
-		Object page = 	pploginpage.clickOnSignIn();
-		if (page instanceof PatientPortalLoginPage)
-			Assert.fail("Login failed ");
-		else if (page instanceof PatientPortalHomePage)
-			System.out.println("Logged in successfully");
-		
-
-		ppHomePage = (PatientPortalHomePage) page;
-		driver.navigate().refresh();
-		Thread.sleep(3000);
-		ppHomePage.clkOnSendAMessageBtn();
-		ppHomePage.clickOnRequestANAppointmentButton();
-		ppHomePage.enterSubjectAppointmentScreen(data.get("Subject"));
-		ppHomePage.enterMessageAppointmentScreen(data.get("Message"));
-		ppHomePage.clickOnSendBtnOfAppointMentScreen();
-		Assert.assertTrue(ppHomePage.verifyTitle("Home"));
-		ppHomePage.leftMenu.logoutPath();
-		Assert.assertTrue(ppHomePage.verifyTitle("Log on"));
-		
-	}*/
 
 	@DataProvider
 	public Object[][] getData() {

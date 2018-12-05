@@ -9,7 +9,7 @@
 		/> </classes> </test> -->
  
   
-<!--  <groups>
+ <groups>
 			<run>
 				<include name="email" />
 			</run>
@@ -19,9 +19,9 @@
 			<class name="patientPortal.Test.PatientPortalUpdateInformationTest" />		
 		</classes>
 	</test>
-	 -->
 	
-	<test name="Patient Portal Login Test" > 
+	
+ <!-- <test name="Patient Portal Login Test" > 
 		<classes>
 			<class name="patientPortal.Test.PatientPortalLoginTest" />		
 		</classes>
@@ -37,6 +37,6 @@
 		<classes>
 			<class name="patientPortal.Test.PatientPortalMyAccountTest" />		
 		</classes>
-	</test>
+	</test> -->
 	 
 </suite> 

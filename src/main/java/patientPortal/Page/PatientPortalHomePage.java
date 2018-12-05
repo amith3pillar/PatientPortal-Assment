@@ -61,43 +61,7 @@ public class PatientPortalHomePage extends BasePage {
 
 	}
 
-	/*public void send_A_Message(String Sub_String, String MessageString) {
-		test.log(LogStatus.INFO, "Opening New Message Page");
-		Wait(send_Message_Button);
-		send_Message_Button.click();
-		Wait(enter_Subject);
-		test.log(LogStatus.INFO, "Entering Subject as- " + Sub_String);
-		enter_Subject.sendKeys("Sub_String");
-		test.log(LogStatus.INFO, "Entering Message as- " + MessageString);
-		enter_Message.sendKeys("MessageString");
-		send_Button.click();
-	}*/
-
-	/*public void requestAppointment(String Sub_String, String MessageString) {
-		test.log(LogStatus.INFO, "Opening Request an Appointment Page");
-		Wait(requestAnAppointment);
-		requestAnAppointment.click();
-		Wait(enter_Subject);
-		test.log(LogStatus.INFO, "Entering Subject as- " + Sub_String);
-		enter_Subject.sendKeys("Sub_String");
-		enter_Message.sendKeys("MessageString");
-		test.log(LogStatus.INFO, "Entering Message as- " + MessageString);
-		send_Button.click();
-
-	}*/
-
-	/*public PatientPortalMyAccountPage openMyAccount() throws InterruptedException {
-		test.log(LogStatus.INFO, "Opening Grant Access Screen");
-		Thread.sleep(3000);
-		myAccountbtn.click();
-		Wait(clkGrantAccess);
-		clkGrantAccess.click();
-		PatientPortalMyAccountPage ppMyAccountPage = new PatientPortalMyAccountPage(driver, test);
-		PageFactory.initElements(driver, ppMyAccountPage);
-		return ppMyAccountPage;
-
-	}
-*/
+	
 	public void openMyAccountSection() throws InterruptedException{
 		try{
 			
@@ -127,39 +91,6 @@ public class PatientPortalHomePage extends BasePage {
 	// Clicking on Update page
 	public PatientPortalUpdateInformationPage navigatetoUpdateInformation() throws InterruptedException {
 		System.out.println("Clicking on Update Button on Home Page");
-	/*	
-		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-			    .withTimeout(30, TimeUnit.SECONDS)
-			    .pollingEvery(5, TimeUnit.SECONDS)
-			    .ignoring(NoSuchElementException.class)
-			    .ignoring(ElementNotInteractableException.class);
-
-			WebElement foo = wait.until(new Function<WebDriver, WebElement>() 
-			{
-			  public WebElement apply(WebDriver driver) {
-			  return driver.findElement(By.id("//div[@class='row']//div[5]//a[1]"));
-			}
-			});
-			foo.click();*/
-		
-	/*	org.openqa.selenium.support.ui.Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-			    .withTimeout(60, TimeUnit.SECONDS)
-			    .pollingEvery(5, TimeUnit.SECONDS)
-			    .ignoring(NoSuchElementException.class);
-
-			WebElement foo = wait.until(new Function<WebDriver, WebElement>() 
-			{
-			  public WebElement apply(WebDriver driver) {
-			WebElement m=   driver.findElement(By.xpath("//div[@class='row']//div[5]//a[1]"));
-			return m;
-			
-			}
-			});*/
-		
-		
-		/*long timeoutInSeconds = 3000;
-		new WebDriverWait(driver, timeoutInSeconds).until(ExpectedConditions.elementToBeClickable(By.xpath(PPHomePageOR.CLK_UPDATE_INFORMATION_BTN)));*/
-		//waitfunction(updateInformaitonBTN);
 		Thread.sleep(10000);
 		updateInformaitonBTN.click();
 		PatientPortalUpdateInformationPage ppUpdateInformation = new PatientPortalUpdateInformationPage(driver, test);

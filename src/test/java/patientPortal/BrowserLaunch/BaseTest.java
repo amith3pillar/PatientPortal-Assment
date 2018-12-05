@@ -93,20 +93,7 @@ public void takeScreenShot(){
 		test.log(LogStatus.INFO, test.addScreenCapture(filePath));
 		
 	}
-/*
-//Assertion method which will verify the title
-public  boolean verifyTitle(String expectedTitle){
-	//boolean isTitlePresent=false;
-	String text=driver.getTitle();
-	System.out.println("The Title is-"+text);
-	if(text.contains(expectedTitle)){
-		return true;
-	}
-	else{
-		return false;
-	}
-	
-}*/
+
 
 
 

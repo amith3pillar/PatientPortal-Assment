@@ -68,16 +68,5 @@ public class PatientPortalLeftMenu {
 	}
 	
 	
-/*	public void Wait(WebElement element) {
-		try {
-			long timeoutInSeconds = 5000;
 
-			WebElement logOffIcon_WE = driver.findElement(By.xpath("//a[@class='icon-background menu-icon-logout']"));
-			new WebDriverWait(driver, timeoutInSeconds).until(ExpectedConditions.attributeToBe(logOffIcon_WE, "href",
-					"/PatientPortal/Develop/PP/Account/LogOff"));
-
-		} catch (Exception e) {
-			System.out.println("Waited for too long time........");
-		}
-	}*/
 }

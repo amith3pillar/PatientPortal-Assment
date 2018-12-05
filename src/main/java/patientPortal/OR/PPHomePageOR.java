@@ -6,8 +6,8 @@ public class PPHomePageOR {
 	
 	public static final String GRANT_ACCESS = " //span[contains(text(),'Grant Access')]";
 
-	public static final String MY_ACCOUNT = "//a[contains(text(),'My Account-1')]";
-	//public static final String MY_ACCOUNT = "//a[contains(text(),'My Account')]";
+
+	public static final String MY_ACCOUNT = "//a[contains(text(),'My Account')]";
 	
 	public static final String CLK_HISTORY_LOG = "//a[@href='/PatientPortal/Develop/PP/AccessLog/AccessLog']";
 

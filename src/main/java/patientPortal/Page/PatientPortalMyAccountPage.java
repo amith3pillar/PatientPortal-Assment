@@ -52,28 +52,6 @@ public class PatientPortalMyAccountPage extends BasePage {
 	public WebElement Btn_Notice;
 
 
-	
-	// This method is for creating new user by Clicking on MyAccount from left
-	// pannel
-	/*public void grantAccessToNewUser(String authUserName, String authPassword, String AuthConfirmPass,
-		String FirstName, String LastName) throws InterruptedException {
-		test.log(LogStatus.INFO, "Entering values in authontication page");
-		//Thread.sleep(3000);
-		Wait(enterUserName);
-		enterUserName.clear();
-		test.log(LogStatus.INFO, "Loggin In-"+authUserName +"/"+ authPassword+"/"+FirstName+"/"+LastName);
-		enterUserName.sendKeys(authUserName);
-		enterPassword.sendKeys(authPassword);
-		enterCon_Password.sendKeys(AuthConfirmPass);
-		firstName.clear();
-		firstName.sendKeys(FirstName);
-		last_Name.clear();
-		last_Name.sendKeys(LastName);
-		Btn_Save.click();
-		test.log(LogStatus.INFO, "New Crediential Created ");
-		Thread.sleep(3000);
-
-	}*/
 	public void authorizedUserName(String authUserName){
 		test.log(LogStatus.INFO, "Entering Authorized Representative User Name");
 		Wait(enterUserName);

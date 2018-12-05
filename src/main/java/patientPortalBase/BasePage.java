@@ -60,38 +60,6 @@ public class BasePage {
 	}
 	
 
-/*	public void findElement(WebElement element){
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();", element);
-	}
-*/
-/*	public WebElement   getElementWithFluentWait(By element1){
-		FluentWait<EventFiringWebDriver> wait = new FluentWait<EventFiringWebDriver>(driver);
-		//wait.pollingEvery(200, TimeUnit.SECONDS);
-		//wait.withTimeout(10, TimeUnit.SECONDS);
-		wait.pollingEvery(100, TimeUnit.MILLISECONDS);
-		wait.withTimeout(30, TimeUnit.SECONDS);
-		wait.ignoring(NoSuchElementException.class);
-		wait.ignoring(ElementNotVisibleException.class);
-		Function<EventFiringWebDriver, WebElement> function = new Function<EventFiringWebDriver, WebElement>() {
-			public WebElement apply(EventFiringWebDriver driver) {
-				return driver.findElement(element1);
-			}
-		};
-		return wait.until(function);
-
-	}*/
-/*
-	public void sleep(WebElement element) {
-		try {
-			long timeout = 100;
-			wait = new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
-		} catch (Exception e) {
-			System.out.println("Waited for too long time........");
-		}
-
-	}
-*/
 	public void waitfunction(WebElement element) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -103,16 +71,7 @@ public class BasePage {
 
 	}
 
-	/*public void ajexoverlay(WebElement element) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(
-					ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='ajax-loader-overlay']")));
-			element.click();
-		} catch (Exception e) {
-			System.out.println("Waited for too long time for loading ........");
-		}
-	}*/
+	
 
 	public String verifyText(String locator, String ExpText) {
 
@@ -173,21 +132,5 @@ public class BasePage {
 
 	}
 
-	/*public void fluentwait(By Locatar){
-	FluentWait wait = new FluentWait(driver )
-			.withTimeout(100, TimeUnit.SECONDS)
-			.pollingEvery(5, TimeUnit.SECONDS)
-			.ignoring(Exception.class);
-	
-			WebElement foo=(WebElement) wait.until(new Function<WebDriver, WebElement>() {
-			public WebElement applyy(WebDriver driver) {
-			return driver.findElement(By.id("foo"));
-			}
 
-			public WebElement apply(WebDriver arg0) {
-				// TODO Auto-generated method stub
-				return driver.findElement(Locatar);
-			}
-			});
-	}*/
 	}
